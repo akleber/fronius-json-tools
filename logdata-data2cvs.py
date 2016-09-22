@@ -1,7 +1,7 @@
 import json
 import csv
 import collections
-
+import matplotlib.pyplot as plt
 from pprint import pprint
 
 
@@ -85,5 +85,31 @@ with open('examples/wac_minus_diff.csv', 'wb') as csv_file:
 
     for key, value in wac_minus_diff:
        writer.writerow([key, value])
+
+
+
+
+plus_keys = []
+plus_values = []
+
+previous_value = int(wac_plus_abs_ordered[0][1])
+for key, value in wac_plus_abs_ordered:
+  diff = int(value) - previous_value
+  previous_value = int(value)
+
+  plus_keys.append( int(key) )
+  plus_values.append( float(diff) )
+  
+
+print(plus_keys)
+print(plus_values)
+
+
+plt.plot(plus_keys, plus_values)
+#plt.show()
+plt.savefig('examples/plot.png', bbox_inches='tight')
+
+
+
 
 
