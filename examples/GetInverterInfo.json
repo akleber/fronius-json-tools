@@ -1,0 +1,24 @@
+{
+	"Head" : {
+		"RequestArguments" : {},
+		"Status" : {
+			"Code" : 0,
+			"Reason" : "",
+			"UserMessage" : ""
+		},
+		"Timestamp" : "2016-09-29T14:07:28+02:00"
+	},
+	"Body" : {
+		"Data" : {
+			"1" : {
+				"DT" : 83,
+				"PVPower" : 4060,
+				"Show" : 1,
+				"UniqueID" : "278265",
+				"ErrorCode" : 0,
+				"StatusCode" : 7,
+				"CustomName" : ""
+			}
+		}
+	}
+}

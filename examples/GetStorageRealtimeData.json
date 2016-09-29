@@ -1,0 +1,98 @@
+{
+	"Head" : {
+		"RequestArguments" : {
+			"DeviceClass" : "Storage",
+			"Scope" : "System"
+		},
+		"Status" : {
+			"Code" : 0,
+			"Reason" : "",
+			"UserMessage" : ""
+		},
+		"Timestamp" : "2016-09-29T14:08:29+02:00"
+	},
+	"Body" : {
+		"Data" : {
+			"0" : {
+				"Controller" : {
+					"Details" : {
+						"Serial" : "27342798",
+						"Model" : "C5",
+						"Manufacturer" : "Sony"
+					},
+					"TimeStamp" : 1475150905,
+					"Enable" : 1,
+					"StateOfCharge_Relative" : 99,
+					"Voltage_DC" : 159.6,
+					"Current_DC" : 0,
+					"Temperature_Cell" : 28.4,
+					"Voltage_DC_Maximum_Cell" : 3.329,
+					"Voltage_DC_Minimum_Cell" : 3.324,
+					"DesignedCapacity" : 3600
+				},
+				"Modules" : [
+					{
+						"Details" : {
+							"Serial" : "S013012420 ",
+							"Model" : "P49936860R",
+							"Manufacturer" : "Sony"
+						},
+						"TimeStamp" : 1475150905,
+						"Enable" : 1,
+						"StateOfCharge_Relative" : 99,
+						"Voltage_DC" : 53.235,
+						"Current_DC" : -0.09,
+						"Temperature_Cell" : 29,
+						"Voltage_DC_Maximum_Cell" : 3.329,
+						"Voltage_DC_Minimum_Cell" : 3.325,
+						"Temperature_Cell_Maximum" : 29.5,
+						"Temperature_Cell_Minimum" : 28.4,
+						"CycleCount_BatteryCell" : 17,
+						"Status_BatteryCell" : 83,
+						"DesignedCapacity" : 1200
+					},
+					{
+						"Details" : {
+							"Serial" : "S013012421 ",
+							"Model" : "P49936860R",
+							"Manufacturer" : "Sony"
+						},
+						"TimeStamp" : 1475150905,
+						"Enable" : 1,
+						"StateOfCharge_Relative" : 99,
+						"Voltage_DC" : 53.229,
+						"Current_DC" : -0.09,
+						"Temperature_Cell" : 29,
+						"Voltage_DC_Maximum_Cell" : 3.329,
+						"Voltage_DC_Minimum_Cell" : 3.324,
+						"Temperature_Cell_Maximum" : 29.4,
+						"Temperature_Cell_Minimum" : 28.4,
+						"CycleCount_BatteryCell" : 17,
+						"Status_BatteryCell" : 83,
+						"DesignedCapacity" : 1200
+					},
+					{
+						"Details" : {
+							"Serial" : "S013012453 ",
+							"Model" : "P49936860R",
+							"Manufacturer" : "Sony"
+						},
+						"TimeStamp" : 1475150905,
+						"Enable" : 1,
+						"StateOfCharge_Relative" : 99,
+						"Voltage_DC" : 53.231,
+						"Current_DC" : -0.09,
+						"Temperature_Cell" : 27.8,
+						"Voltage_DC_Maximum_Cell" : 3.328,
+						"Voltage_DC_Minimum_Cell" : 3.324,
+						"Temperature_Cell_Maximum" : 28.3,
+						"Temperature_Cell_Minimum" : 27.1,
+						"CycleCount_BatteryCell" : 17,
+						"Status_BatteryCell" : 83,
+						"DesignedCapacity" : 1200
+					}
+				]
+			}
+		}
+	}
+}
