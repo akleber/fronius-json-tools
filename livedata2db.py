@@ -2,6 +2,7 @@ import urllib
 import json
 import time
 import collections
+import sqlite3 as lite
 
 hostname = "192.168.134.104"
 
@@ -9,6 +10,8 @@ data = collections.OrderedDict()
 
 # Powerflow
 starttime = time.time()
+
+data['timestamp'] = time.time()
 
 powerflow_url = "http://" + hostname + "/solar_api/v1/GetPowerFlowRealtimeData.fcgi"
 powerflow_response = urllib.urlopen(powerflow_url)
@@ -90,4 +93,13 @@ for key, value in data.items():
 	print('{}: {}'.format(key, value))
 
 # Save to DB
+con = lite.connect('fronius.db')
+
+with con:
+    cur = con.cursor()    
+    
+    #cur.execute("DROP TABLE IF EXISTS fronius")
+    #cur.execute("CREATE TABLE fronius(" + ', '.join(data.keys()) + ")")
+    cur.execute("INSERT INTO fronius VALUES (" + ('?,' * len(data.values()))[:-1] + ")", data.values())
+
 
