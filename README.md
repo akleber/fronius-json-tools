@@ -14,14 +14,14 @@ Python tools to work with the json data of the Fronius Solar API
 
 
 # API Links
-http://192.168.134.104/solar_api/v1/GetActiveDeviceInfo.cgi?DeviceClass=System
-http://192.168.134.104/solar_api/v1/GetInverterInfo.cgi
-http://192.168.134.104/solar_api/v1/GetInverterRealtimeData.cgi?Scope=System
-http://192.168.134.104/solar_api/v1/GetLoggerInfo.cgi
-http://192.168.134.104/solar_api/v1/GetLoggerLEDInfo.cgi
-http://192.168.134.104/solar_api/v1/GetMeterRealtimeData.cgi?Scope=System
-http://192.168.134.104/solar_api/v1/GetPowerFlowRealtimeData.fcgi
-http://192.168.134.104/solar_api/v1/GetStorageRealtimeData.cgi?Scope=System
+http://fronius/solar_api/v1/GetActiveDeviceInfo.cgi?DeviceClass=System
+http://fronius/solar_api/v1/GetInverterInfo.cgi
+http://fronius/solar_api/v1/GetInverterRealtimeData.cgi?Scope=System
+http://fronius/solar_api/v1/GetLoggerInfo.cgi
+http://fronius/solar_api/v1/GetLoggerLEDInfo.cgi
+http://fronius/solar_api/v1/GetMeterRealtimeData.cgi?Scope=System
+http://fronius/solar_api/v1/GetPowerFlowRealtimeData.fcgi
+http://fronius/solar_api/v1/GetStorageRealtimeData.cgi?Scope=System
 
 # Notes on Data
 * ActiveDeviceInfo: Dependent on the hardware, should never change

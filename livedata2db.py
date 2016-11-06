@@ -1,12 +1,26 @@
-import urllib
-import json
 import time
 import collections
 import sqlite3 as lite
+import requests
 
-hostname = "192.168.134.104"
+hostname = "fronius"
 
 data = collections.OrderedDict()
+current_time_string = time.strftime("%Y-%m-%d %H:%M:%S", time.gmtime())
+
+def get_data(url):
+	try:
+		r = requests.get(url, timeout=10)
+		r.raise_for_status()
+		return r.json()	
+	except requests.exceptions.Timeout:
+		print("Timeout requesting {} at {}".format(url, current_time_string))
+	except requests.exceptions.RequestException as e:
+		print("requests exception {} at {}".format(e, current_time_string))
+
+	# if we get no data, we exit directly
+	return exit()
+
 
 # Powerflow
 starttime = time.time()
@@ -14,8 +28,7 @@ starttime = time.time()
 data['timestamp'] = time.time()
 
 powerflow_url = "http://" + hostname + "/solar_api/v1/GetPowerFlowRealtimeData.fcgi"
-powerflow_response = urllib.urlopen(powerflow_url)
-powerflow_data = json.loads(powerflow_response.read())
+powerflow_data = get_data(powerflow_url)
 
 data['powerflow_timestamp'] = powerflow_data['Head']['Timestamp']
 data['powerflow_mode'] = powerflow_data['Body']['Data']['Site']['Mode']
@@ -33,8 +46,7 @@ print time.time()-starttime
 starttime = time.time()
 
 meter_url = "http://" + hostname + "/solar_api/v1/GetMeterRealtimeData.cgi?Scope=System"
-meter_response = urllib.urlopen(meter_url)
-meter_data = json.loads(meter_response.read())
+meter_data = get_data(meter_url)
 
 data['meter_timestamp'] = meter_data['Head']['Timestamp']
 data['meter_timestamp2'] = meter_data['Body']['Data']['0']['TimeStamp']
@@ -74,8 +86,7 @@ print time.time()-starttime
 starttime = time.time()
 
 battery_url = "http://" + hostname + "/solar_api/v1/GetStorageRealtimeData.cgi?Scope=System"
-battery_response = urllib.urlopen(battery_url)
-battery_data = json.loads(battery_response.read())
+battery_data = get_data(battery_url)
 
 data['battery_controller_timestamp'] = battery_data['Head']['Timestamp']
 data['battery_controller_timestamp2'] = battery_data['Body']['Data']['0']['Controller']['TimeStamp']
