@@ -1,12 +1,19 @@
 # fronius-json-tools
-Python tools to work with the json data of the Fronius Solar API
+Python tools to work with the json data of the Fronius Solar API.
 
+These are miscellaneous scripts I wrote while working with the Solar API.
+They mostly lack documentation right now and are sometimes incomplete.
+Nevertheless my goal is to continously work on them until they fit my needs.
 
 # Goals
+* Understand and document the Solar API
 * Python cron script that fetches all available live data of the datalogger and saves it into a sqlite db
 * Python script that import the datalogger archive data into the sqlite db
 * Generate relevant graphs from db
 * iOS app and today widget that shows live data from datalogger
+
+# TODO
+* Sort keys in 1.2.3-1 examples and compare to 1.3.2-3
 
 # Relevant Graphs
 * Battery Charge throughout the day
@@ -15,7 +22,6 @@ Python tools to work with the json data of the Fronius Solar API
 ** P_Grid (line)
 ** P (line)
 ** SOC (line)
-
 
 # API Links
 http://fronius/solar_api/v1/GetActiveDeviceInfo.cgi?DeviceClass=System
@@ -30,8 +36,6 @@ http://fronius/solar_api/v1/GetStorageRealtimeData.cgi?Scope=System
 http://fronius/solar_api/v1/GetArchiveData.cgi?Scope=System&StartDate=1.11.2016&EndDate=11.11.2016&SeriesType=DailySum&Channel=EnergyReal_WAC_Sum_Produced&Channel=InverterErrors
 http://fronius/solar_api/v1/GetArchiveData.cgi?Scope=System&StartDate=1.11.2016&EndDate=1.11.2016&Channel=EnergyReal_WAC_Sum_Produced&Channel=EnergyReal_WAC_Minus_Absolute
 
-
-
 # Notes on Data
 * ActiveDeviceInfo: Dependent on the hardware, should never change
 * InverterInfo: Mostly dependend on Hardware, Configuration, should seldome change, except status and error code
@@ -42,7 +46,6 @@ http://fronius/solar_api/v1/GetArchiveData.cgi?Scope=System&StartDate=1.11.2016&
 * MeterRealimeData: Interesting Data is here
 * PowerFlowRealtimeData: More interesting stuff
 * StorageRealtimeData: Interesting stuff about the battery
-
 
 # Notes on GetArchivData
 * Query interval is restricted to 16 days
