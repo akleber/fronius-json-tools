@@ -4,6 +4,7 @@ import requests
 import sys
 import os
 import json
+import time
 from datetime import timedelta, date, datetime
 
 hostname = "fronius"
@@ -32,7 +33,7 @@ def main(argv):
 		url = "http://" + hostname + "/solar_api/v1/GetArchiveData.cgi?Scope=System&StartDate=" + \
 			datestring + "&EndDate=" + datestring + "&SeriesType=DailySum&Channel=EnergyReal_WAC_Sum_Produced&Channel=InverterErrors"
 
-		r = requests.get(url, timeout=60)
+		r = requests.get(url, timeout=120)
 		r.raise_for_status()
 		jsondata = r.json()
 
@@ -44,12 +45,15 @@ def main(argv):
 		url = "http://" + hostname + "/solar_api/v1/GetArchiveData.cgi?Scope=System&StartDate=" + \
 			datestring + "&EndDate=" + datestring + "&Channel=EnergyReal_WAC_Plus_Absolute&Channel=EnergyReal_WAC_Minus_Absolute"
 
-		r = requests.get(url, timeout=60)
+		r = requests.get(url, timeout=120)
 		r.raise_for_status()
 		jsondata = r.json()
 
 		with open(os.path.join(subdir, "archivedata_day_" + datestring + ".json"), 'w') as f:
 			json.dump(jsondata, f, indent=4)
+
+		print("Finished day: " + datestring)
+		time.sleep(3)
 
 if __name__ == "__main__":
 	main(sys.argv)
