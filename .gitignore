@@ -91,3 +91,6 @@ ENV/
 
 # fronius-json-tools
 fronius.db
+
+# akleber specific
+drosselweg/
