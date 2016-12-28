@@ -1,4 +1,13 @@
 
+"""
+This script expects three parameters: start_date, end_date, and subdir.
+Example:
+python archivedata2json.py 01.01.2016 30.01.2016 my_archive_data
+
+It then uses the GetArchiveData API to obtain the saved data and writes it to 
+one json file per day. It fetches the detailed data per day as well as 
+the daily sum values per day.
+"""
 
 import requests
 import sys

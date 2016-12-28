@@ -1,6 +1,13 @@
+
+"""
+Work-in-progress!!!
+
+Fetches some data from the fronius.db (filled by livedata2db.py)
+and generats a graph.
+"""
+
 import matplotlib.pyplot as plt
 import sqlite3 as lite
-
 
 con = lite.connect('examples/fronius.db')
 

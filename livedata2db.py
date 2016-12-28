@@ -1,3 +1,9 @@
+
+"""
+Queries some API endpoints for the most important data and saves it to a sqlite database
+for easy access. Should be run regularly, e.g. every 5 minutes.
+"""
+
 import time
 import collections
 import sqlite3 as lite

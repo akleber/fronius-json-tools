@@ -1,4 +1,8 @@
 
+"""
+Fetches and saves the results of some (important?) API endpoints
+as reference examples. Can be used to see changes.
+"""
 
 import requests
 import sys
