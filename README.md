@@ -57,10 +57,10 @@ http://fronius/solar_api/v1/GetArchiveData.cgi?Scope=System&StartDate=1.11.2016&
 
 1.3.2-3 -> 1.4.1-11
 * GetInverterRealtimeData.json
-** Head.RequestArguments.DataCollection removed
+  * Head.RequestArguments.DataCollection removed
 * GetPowerFlowRealtimeData.json
-** Body.Data.Site.BatteryStandby added
+  * Body.Data.Site.BatteryStandby added
 * GetStorageRealtimeData.json
-** Body.Data.0.Controller.Details.Menufacturer: "Sony" changed to "Fronius International"
-** Body.Data.0.Controller.Details.Model: "C5" changed to "Fronius Solar Battery"
+  * Body.Data.0.Controller.Details.Menufacturer: "Sony" changed to "Fronius International"
+  * Body.Data.0.Controller.Details.Model: "C5" changed to "Fronius Solar Battery"
 
