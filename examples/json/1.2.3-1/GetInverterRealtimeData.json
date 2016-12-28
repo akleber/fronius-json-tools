@@ -1,42 +1,42 @@
 {
-	"Head" : {
-		"RequestArguments" : {
-			"DataCollection" : "",
-			"Scope" : "System"
-		},
-		"Status" : {
-			"Code" : 0,
-			"Reason" : "",
-			"UserMessage" : ""
-		},
-		"Timestamp" : "2016-09-29T14:05:36+02:00"
-	},
-	"Body" : {
-		"Data" : {
-			"PAC" : {
-				"Unit" : "W",
-				"Values" : {
-					"1" : 3225
-				}
-			},
-			"DAY_ENERGY" : {
-				"Unit" : "Wh",
-				"Values" : {
-					"1" : 12178
-				}
-			},
-			"YEAR_ENERGY" : {
-				"Unit" : "Wh",
-				"Values" : {
-					"1" : 279368
-				}
-			},
-			"TOTAL_ENERGY" : {
-				"Unit" : "Wh",
-				"Values" : {
-					"1" : 292002
-				}
-			}
-		}
-	}
+    "Body": {
+        "Data": {
+            "DAY_ENERGY": {
+                "Unit": "Wh",
+                "Values": {
+                    "1": 12178
+                }
+            },
+            "PAC": {
+                "Unit": "W",
+                "Values": {
+                    "1": 3225
+                }
+            },
+            "TOTAL_ENERGY": {
+                "Unit": "Wh",
+                "Values": {
+                    "1": 292002
+                }
+            },
+            "YEAR_ENERGY": {
+                "Unit": "Wh",
+                "Values": {
+                    "1": 279368
+                }
+            }
+        }
+    },
+    "Head": {
+        "RequestArguments": {
+            "DataCollection": "",
+            "Scope": "System"
+        },
+        "Status": {
+            "Code": 0,
+            "Reason": "",
+            "UserMessage": ""
+        },
+        "Timestamp": "2016-09-29T14:05:36+02:00"
+    }
 }

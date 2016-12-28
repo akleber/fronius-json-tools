@@ -1,34 +1,34 @@
 {
-	"Head" : {
-		"RequestArguments" : {},
-		"Status" : {
-			"Code" : 0,
-			"Reason" : "",
-			"UserMessage" : ""
-		},
-		"Timestamp" : "2016-09-29T14:08:53+02:00"
-	},
-	"Body" : {
-		"Data" : {
-			"Site" : {
-				"Mode" : "bidirectional",
-				"P_Grid" : -2917.46,
-				"P_Load" : -268.54,
-				"P_Akku" : 0,
-				"P_PV" : 3328,
-				"E_Day" : 12350,
-				"E_Year" : 279540.8,
-				"E_Total" : 292174.6,
-				"Meter_Location" : "grid"
-			},
-			"Inverters" : {
-				"1" : {
-					"DT" : 83,
-					"P" : 3186,
-					"SOC" : 99,
-					"Battery_Mode" : "normal"
-				}
-			}
-		}
-	}
+    "Body": {
+        "Data": {
+            "Inverters": {
+                "1": {
+                    "Battery_Mode": "normal",
+                    "DT": 83,
+                    "P": 3186,
+                    "SOC": 99
+                }
+            },
+            "Site": {
+                "E_Day": 12350,
+                "E_Total": 292174.6,
+                "E_Year": 279540.8,
+                "Meter_Location": "grid",
+                "Mode": "bidirectional",
+                "P_Akku": 0,
+                "P_Grid": -2917.46,
+                "P_Load": -268.54,
+                "P_PV": 3328
+            }
+        }
+    },
+    "Head": {
+        "RequestArguments": {},
+        "Status": {
+            "Code": 0,
+            "Reason": "",
+            "UserMessage": ""
+        },
+        "Timestamp": "2016-09-29T14:08:53+02:00"
+    }
 }

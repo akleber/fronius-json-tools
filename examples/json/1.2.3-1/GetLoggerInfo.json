@@ -1,29 +1,29 @@
 {
-	"Head" : {
-		"RequestArguments" : {},
-		"Status" : {
-			"Code" : 0,
-			"Reason" : "",
-			"UserMessage" : ""
-		},
-		"Timestamp" : "2016-09-29T14:06:11+02:00"
-	},
-	"Body" : {
-		"LoggerInfo" : {
-			"UniqueID" : "239.6545",
-			"ProductID" : "fronius-hybrid",
-			"PlatformID" : "wilma",
-			"HWVersion" : "2.4D",
-			"SWVersion" : "1.2.2-3",
-			"TimezoneLocation" : "Berlin",
-			"TimezoneName" : "CEST",
-			"UTCOffset" : 7200,
-			"DefaultLanguage" : "de",
-			"CashFactor" : 0.12,
-			"DeliveryFactor" : 0.25,
-			"CashCurrency" : "EUR",
-			"CO2Factor" : 0.53,
-			"CO2Unit" : "kg"
-		}
-	}
+    "Body": {
+        "LoggerInfo": {
+            "CO2Factor": 0.53,
+            "CO2Unit": "kg",
+            "CashCurrency": "EUR",
+            "CashFactor": 0.12,
+            "DefaultLanguage": "de",
+            "DeliveryFactor": 0.25,
+            "HWVersion": "2.4D",
+            "PlatformID": "wilma",
+            "ProductID": "fronius-hybrid",
+            "SWVersion": "1.2.2-3",
+            "TimezoneLocation": "Berlin",
+            "TimezoneName": "CEST",
+            "UTCOffset": 7200,
+            "UniqueID": "239.6545"
+        }
+    },
+    "Head": {
+        "RequestArguments": {},
+        "Status": {
+            "Code": 0,
+            "Reason": "",
+            "UserMessage": ""
+        },
+        "Timestamp": "2016-09-29T14:06:11+02:00"
+    }
 }

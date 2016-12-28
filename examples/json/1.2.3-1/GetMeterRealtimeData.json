@@ -1,58 +1,58 @@
 {
-	"Head" : {
-		"RequestArguments" : {
-			"DeviceClass" : "Meter",
-			"Scope" : "System"
-		},
-		"Status" : {
-			"Code" : 0,
-			"Reason" : "",
-			"UserMessage" : ""
-		},
-		"Timestamp" : "2016-09-29T14:08:06+02:00"
-	},
-	"Body" : {
-		"Data" : {
-			"0" : {
-				"Details" : {
-					"Serial" : "16220118",
-					"Model" : "Fronius Smart Meter 63A",
-					"Manufacturer" : "Fronius"
-				},
-				"TimeStamp" : 1475150885,
-				"Enable" : 1,
-				"Visible" : 1,
-				"PowerReal_P_Sum" : -2928.56,
-				"Meter_Location_Current" : 0,
-				"PowerReal_P_Phase_1" : -992.14,
-				"PowerReal_P_Phase_2" : -1039.99,
-				"PowerReal_P_Phase_3" : -896.43,
-				"PowerReactive_Q_Sum" : -272.55,
-				"PowerReactive_Q_Phase_1" : -93.31,
-				"PowerReactive_Q_Phase_2" : -50.89,
-				"PowerReactive_Q_Phase_3" : -128.35,
-				"Current_AC_Phase_1" : 4.337,
-				"Current_AC_Phase_2" : 4.523,
-				"Current_AC_Phase_3" : 3.961,
-				"Voltage_AC_Phase_1" : 232,
-				"Voltage_AC_Phase_2" : 232.2,
-				"Voltage_AC_Phase_3" : 232.4,
-				"Voltage_AC_PhaseToPhase_12" : 402,
-				"Voltage_AC_PhaseToPhase_23" : 402.4,
-				"Voltage_AC_PhaseToPhase_31" : 402.2,
-				"Frequency_Phase_Average" : 50,
-				"PowerApparent_S_Sum" : 2941,
-				"PowerFactor_Sum" : -0.99,
-				"PowerFactor_Phase_1" : -0.99,
-				"PowerFactor_Phase_2" : -0.99,
-				"PowerFactor_Phase_3" : -0.99,
-				"EnergyReal_WAC_Sum_Produced" : 176829,
-				"EnergyReal_WAC_Sum_Consumed" : 24009,
-				"EnergyReactive_VArAC_Sum_Produced" : 759340,
-				"EnergyReactive_VArAC_Sum_Consumed" : 34040,
-				"EnergyReal_WAC_Plus_Absolute" : 24009,
-				"EnergyReal_WAC_Minus_Absolute" : 176829
-			}
-		}
-	}
+    "Body": {
+        "Data": {
+            "0": {
+                "Current_AC_Phase_1": 4.337,
+                "Current_AC_Phase_2": 4.523,
+                "Current_AC_Phase_3": 3.961,
+                "Details": {
+                    "Manufacturer": "Fronius",
+                    "Model": "Fronius Smart Meter 63A",
+                    "Serial": "16220118"
+                },
+                "Enable": 1,
+                "EnergyReactive_VArAC_Sum_Consumed": 34040,
+                "EnergyReactive_VArAC_Sum_Produced": 759340,
+                "EnergyReal_WAC_Minus_Absolute": 176829,
+                "EnergyReal_WAC_Plus_Absolute": 24009,
+                "EnergyReal_WAC_Sum_Consumed": 24009,
+                "EnergyReal_WAC_Sum_Produced": 176829,
+                "Frequency_Phase_Average": 50,
+                "Meter_Location_Current": 0,
+                "PowerApparent_S_Sum": 2941,
+                "PowerFactor_Phase_1": -0.99,
+                "PowerFactor_Phase_2": -0.99,
+                "PowerFactor_Phase_3": -0.99,
+                "PowerFactor_Sum": -0.99,
+                "PowerReactive_Q_Phase_1": -93.31,
+                "PowerReactive_Q_Phase_2": -50.89,
+                "PowerReactive_Q_Phase_3": -128.35,
+                "PowerReactive_Q_Sum": -272.55,
+                "PowerReal_P_Phase_1": -992.14,
+                "PowerReal_P_Phase_2": -1039.99,
+                "PowerReal_P_Phase_3": -896.43,
+                "PowerReal_P_Sum": -2928.56,
+                "TimeStamp": 1475150885,
+                "Visible": 1,
+                "Voltage_AC_PhaseToPhase_12": 402,
+                "Voltage_AC_PhaseToPhase_23": 402.4,
+                "Voltage_AC_PhaseToPhase_31": 402.2,
+                "Voltage_AC_Phase_1": 232,
+                "Voltage_AC_Phase_2": 232.2,
+                "Voltage_AC_Phase_3": 232.4
+            }
+        }
+    },
+    "Head": {
+        "RequestArguments": {
+            "DeviceClass": "Meter",
+            "Scope": "System"
+        },
+        "Status": {
+            "Code": 0,
+            "Reason": "",
+            "UserMessage": ""
+        },
+        "Timestamp": "2016-09-29T14:08:06+02:00"
+    }
 }

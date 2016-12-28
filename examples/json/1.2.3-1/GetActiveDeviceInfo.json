@@ -1,36 +1,36 @@
 {
-	"Head" : {
-		"RequestArguments" : {
-			"DeviceClass" : "System"
-		},
-		"Status" : {
-			"Code" : 0,
-			"Reason" : "",
-			"UserMessage" : ""
-		},
-		"Timestamp" : "2016-09-29T14:07:46+02:00"
-	},
-	"Body" : {
-		"Data" : {
-			"Inverter" : {
-				"1" : {
-					"DT" : 83
-				}
-			},
-			"SensorCard" : {},
-			"StringControl" : {},
-			"Meter" : {
-				"0" : {
-					"DT" : -1,
-					"Serial" : "16220118"
-				}
-			},
-			"Storage" : {
-				"0" : {
-					"DT" : -1,
-					"Serial" : "27342798"
-				}
-			}
-		}
-	}
+    "Body": {
+        "Data": {
+            "Inverter": {
+                "1": {
+                    "DT": 83
+                }
+            },
+            "Meter": {
+                "0": {
+                    "DT": -1,
+                    "Serial": "16220118"
+                }
+            },
+            "SensorCard": {},
+            "Storage": {
+                "0": {
+                    "DT": -1,
+                    "Serial": "27342798"
+                }
+            },
+            "StringControl": {}
+        }
+    },
+    "Head": {
+        "RequestArguments": {
+            "DeviceClass": "System"
+        },
+        "Status": {
+            "Code": 0,
+            "Reason": "",
+            "UserMessage": ""
+        },
+        "Timestamp": "2016-09-29T14:07:46+02:00"
+    }
 }

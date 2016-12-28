@@ -55,6 +55,26 @@ http://fronius/solar_api/v1/GetArchiveData.cgi?Scope=System&StartDate=1.11.2016&
 
 #API Changes
 
+1.2.3-1 -> 1.3.2-3
+* GetActiveDeviceInfo.json
+  * Body.Data.Ohmpilot added
+* GetMeterRealtimeData.json
+  * Body.Data.0.Details.Model: "Fronius Smart Meter 63A" change to "Smart Meter 63A"
+  * Body.Data.0.PowerApparent_S_Phase_1 added
+  * Body.Data.0.PowerApparent_S_Phase_2 added
+  * Body.Data.0.PowerApparent_S_Phase_3 added
+* GetPowerFlowRealtimeData.json
+  * Body.Data.Inverters.1.E_Day added
+  * Body.Data.Inverters.1.E_Total added
+  * Body.Data.Inverters.1.E_Year added
+  * Body.Data.Site.rel_Autonomy added
+  * Body.Data.Site.rel_SelfConsumption added
+* GetStorageRealtimeData.json
+  * Body.Data.0.Controller.DesignedCapacity removed
+    * also in Body.Data.0.Modules removed
+  * Body.Data.0.Controller.Capacity_Maximum added
+    * also in Body.Data.0.Modules removed
+
 1.3.2-3 -> 1.4.1-11
 * GetInverterRealtimeData.json
   * Head.RequestArguments.DataCollection removed
