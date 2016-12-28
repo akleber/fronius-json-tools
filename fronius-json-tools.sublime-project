@@ -1,8 +1,27 @@
 {
+	"build_systems":
+	[
+		{
+			"file_regex": "^[ ]*File \"(...*?)\", line ([0-9]*)",
+			"name": "Anaconda Python Builder",
+			"selector": "source.python",
+			"shell_cmd": "\"venv/bin/python3\" -u \"$file\""
+		}
+	],
 	"folders":
 	[
 		{
 			"path": "."
 		}
-	]
+	],
+	"settings":
+	{
+		"anaconda_linting": true,
+		"anaconda_linting_behaviour": "always",
+		"pep257": false,
+		"python_interpreter": "venv/bin/python3",
+		"test_command": "python3 -m unittest discover",
+		"use_pylint": false,
+		"validate_imports": true
+	}
 }
