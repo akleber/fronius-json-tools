@@ -53,3 +53,14 @@ http://fronius/solar_api/v1/GetArchiveData.cgi?Scope=System&StartDate=1.11.2016&
 * The channel TimeSpanInSec shows the "exact" time span between two time points, typically between 298 and 306
 * The Channel Temperature_Powerstage is not available on my Fronius Symo Hybrid 3.0-3-S
 
+#API Changes
+
+1.3.2-3 -> 1.4.1-11
+* GetInverterRealtimeData.json
+** Head.RequestArguments.DataCollection removed
+* GetPowerFlowRealtimeData.json
+** Body.Data.Site.BatteryStandby added
+* GetStorageRealtimeData.json
+** Body.Data.0.Controller.Details.Menufacturer: "Sony" changed to "Fronius International"
+** Body.Data.0.Controller.Details.Model: "C5" changed to "Fronius Solar Battery"
+

@@ -1,0 +1,98 @@
+{
+    "Body": {
+        "Data": {
+            "0": {
+                "Controller": {
+                    "Capacity_Maximum": 3600,
+                    "Current_DC": 0.6799999848008156,
+                    "Details": {
+                        "Manufacturer": "Fronius International",
+                        "Model": "Fronius Solar Battery",
+                        "Serial": "27342798"
+                    },
+                    "Enable": 1,
+                    "StateOfCharge_Relative": 7,
+                    "Temperature_Cell": 16.55000431686642,
+                    "TimeStamp": 1482917581,
+                    "Voltage_DC": 151.4000022560358,
+                    "Voltage_DC_Maximum_Cell": 3.1670001504244283,
+                    "Voltage_DC_Minimum_Cell": 3.142000149236992
+                },
+                "Modules": [
+                    {
+                        "Capacity_Maximum": 1200,
+                        "Current_DC": 0.7199999839067459,
+                        "CycleCount_BatteryCell": 59,
+                        "Details": {
+                            "Manufacturer": "Sony",
+                            "Model": "P49936860R",
+                            "Serial": "S013012420 "
+                        },
+                        "Enable": 1,
+                        "StateOfCharge_Relative": 7,
+                        "Status_BatteryCell": 50,
+                        "Temperature_Cell": 16.55000431686642,
+                        "Temperature_Cell_Maximum": 16.750004319846653,
+                        "Temperature_Cell_Minimum": 16.55000431686642,
+                        "TimeStamp": 1482917581,
+                        "Voltage_DC": 50.36700239230413,
+                        "Voltage_DC_Maximum_Cell": 3.1540001498069614,
+                        "Voltage_DC_Minimum_Cell": 3.142000149236992
+                    },
+                    {
+                        "Capacity_Maximum": 1200,
+                        "Current_DC": 0.7199999839067459,
+                        "CycleCount_BatteryCell": 59,
+                        "Details": {
+                            "Manufacturer": "Sony",
+                            "Model": "P49936860R",
+                            "Serial": "S013012421 "
+                        },
+                        "Enable": 1,
+                        "StateOfCharge_Relative": 8,
+                        "Status_BatteryCell": 50,
+                        "Temperature_Cell": 16.55000431686642,
+                        "Temperature_Cell_Maximum": 16.750004319846653,
+                        "Temperature_Cell_Minimum": 16.55000431686642,
+                        "TimeStamp": 1482917581,
+                        "Voltage_DC": 50.577002402278595,
+                        "Voltage_DC_Maximum_Cell": 3.166000150376931,
+                        "Voltage_DC_Minimum_Cell": 3.153000149759464
+                    },
+                    {
+                        "Capacity_Maximum": 1200,
+                        "Current_DC": 0.7199999839067459,
+                        "CycleCount_BatteryCell": 60,
+                        "Details": {
+                            "Manufacturer": "Sony",
+                            "Model": "P49936860R",
+                            "Serial": "S013012453 "
+                        },
+                        "Enable": 1,
+                        "StateOfCharge_Relative": 8,
+                        "Status_BatteryCell": 50,
+                        "Temperature_Cell": 16.55000431686642,
+                        "Temperature_Cell_Maximum": 16.650004318356537,
+                        "Temperature_Cell_Minimum": 16.450004315376304,
+                        "TimeStamp": 1482917581,
+                        "Voltage_DC": 50.52000239957124,
+                        "Voltage_DC_Maximum_Cell": 3.1670001504244283,
+                        "Voltage_DC_Minimum_Cell": 3.1470001494744793
+                    }
+                ]
+            }
+        }
+    },
+    "Head": {
+        "RequestArguments": {
+            "DeviceClass": "Storage",
+            "Scope": "System"
+        },
+        "Status": {
+            "Code": 0,
+            "Reason": "",
+            "UserMessage": ""
+        },
+        "Timestamp": "2016-12-28T10:33:04+01:00"
+    }
+}

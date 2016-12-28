@@ -1,0 +1,40 @@
+{
+    "Body": {
+        "Data": {
+            "Inverters": {
+                "1": {
+                    "Battery_Mode": "nearly depleted",
+                    "DT": 83,
+                    "E_Day": 182.3000030517578,
+                    "E_Total": 738738,
+                    "E_Year": 726104.1875,
+                    "P": 269,
+                    "SOC": 7
+                }
+            },
+            "Site": {
+                "BatteryStandby": false,
+                "E_Day": 182.3,
+                "E_Total": 738738,
+                "E_Year": 726104.2000000001,
+                "Meter_Location": "grid",
+                "Mode": "bidirectional",
+                "P_Akku": -111.47,
+                "P_Grid": -0.3399999924004078,
+                "P_Load": -268.6600000075996,
+                "P_PV": 436.8,
+                "rel_Autonomy": 100,
+                "rel_SelfConsumption": 99.87360595078052
+            }
+        }
+    },
+    "Head": {
+        "RequestArguments": {},
+        "Status": {
+            "Code": 0,
+            "Reason": "",
+            "UserMessage": ""
+        },
+        "Timestamp": "2016-12-28T10:33:02+01:00"
+    }
+}
