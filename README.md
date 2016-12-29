@@ -24,17 +24,16 @@ Nevertheless my goal is to continously work on them until they fit my needs.
 ** SOC (line)
 
 # API Links
-http://fronius/solar_api/v1/GetActiveDeviceInfo.cgi?DeviceClass=System
-http://fronius/solar_api/v1/GetInverterInfo.cgi
-http://fronius/solar_api/v1/GetInverterRealtimeData.cgi?Scope=System
-http://fronius/solar_api/v1/GetLoggerInfo.cgi
-http://fronius/solar_api/v1/GetLoggerLEDInfo.cgi
-http://fronius/solar_api/v1/GetMeterRealtimeData.cgi?Scope=System
-http://fronius/solar_api/v1/GetPowerFlowRealtimeData.fcgi
-http://fronius/solar_api/v1/GetStorageRealtimeData.cgi?Scope=System
-
-http://fronius/solar_api/v1/GetArchiveData.cgi?Scope=System&StartDate=1.11.2016&EndDate=11.11.2016&SeriesType=DailySum&Channel=EnergyReal_WAC_Sum_Produced&Channel=InverterErrors
-http://fronius/solar_api/v1/GetArchiveData.cgi?Scope=System&StartDate=1.11.2016&EndDate=1.11.2016&Channel=EnergyReal_WAC_Sum_Produced&Channel=EnergyReal_WAC_Minus_Absolute
+* <http://fronius/solar_api/v1/GetActiveDeviceInfo.cgi?DeviceClass=System>
+* <http://fronius/solar_api/v1/GetInverterInfo.cgi>
+* <http://fronius/solar_api/v1/GetInverterRealtimeData.cgi?Scope=System>
+* <http://fronius/solar_api/v1/GetLoggerInfo.cgi>
+* <http://fronius/solar_api/v1/GetLoggerLEDInfo.cgi>
+* <http://fronius/solar_api/v1/GetMeterRealtimeData.cgi?Scope=System>
+* <http://fronius/solar_api/v1/GetPowerFlowRealtimeData.fcgi>
+* <http://fronius/solar_api/v1/GetStorageRealtimeData.cgi?Scope=System>
+* <http://fronius/solar_api/v1/GetArchiveData.cgi?Scope=System&StartDate=1.11.2016&EndDate=11.11.2016&SeriesType=DailySum&Channel=EnergyReal_WAC_Sum_Produced&Channel=InverterErrors>
+* <http://fronius/solar_api/v1/GetArchiveData.cgi?Scope=System&StartDate=1.11.2016&EndDate=1.11.2016&Channel=EnergyReal_WAC_Sum_Produced&Channel=EnergyReal_WAC_Minus_Absolute>
 
 # Notes on Data
 * ActiveDeviceInfo: Dependent on the hardware, should never change
