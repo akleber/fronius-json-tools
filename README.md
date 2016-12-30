@@ -12,8 +12,7 @@ Nevertheless my goal is to continously work on them until they fit my needs.
 * Generate relevant graphs from db
 * iOS app and today widget that shows live data from datalogger
 
-# TODO
-* Sort keys in 1.2.3-1 examples and compare to 1.3.2-3
+# TODOs
 
 # Relevant Graphs
 * Battery Charge throughout the day
@@ -82,4 +81,5 @@ Nevertheless my goal is to continously work on them until they fit my needs.
 * GetStorageRealtimeData.json
   * Body.Data.0.Controller.Details.Menufacturer: "Sony" changed to "Fronius International"
   * Body.Data.0.Controller.Details.Model: "C5" changed to "Fronius Solar Battery"
+* Float values now have a lot more digits
 
