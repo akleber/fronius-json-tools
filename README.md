@@ -38,11 +38,13 @@ Nevertheless my goal is to continously work on them until they fit my needs.
 * ActiveDeviceInfo: Dependent on the hardware, should never change
 * InverterInfo: Mostly dependend on Hardware, Configuration, should seldome change, except status and error code
 * InverterRealtimeData: All data also available from PowerFlowRealtimeData.
-  PAC = abs(P_Load + P_Grid)
+  * PAC = abs(P_Load + P_Grid)
 * LoggerInfo: Mostly dependend on Hardware, Configuration, should seldom change
 * LoggerLEDInfo: Some minor status infos, should seldom change
 * MeterRealimeData: Interesting Data is here
-* PowerFlowRealtimeData: More interesting stuff
+* PowerFlowRealtimeData: Summary of most important data. Faster then all other endpoints (fcgi)
+  * If Inverter is in Standby P_Akku and P_PV is "null", if only the Battery is in Standby but the Inverter is providing
+    PV power then P_Akku is "0"
 * StorageRealtimeData: Interesting stuff about the battery
 
 # Notes on GetArchivData
