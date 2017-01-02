@@ -46,7 +46,7 @@ data['powerflow_E_Day'] = powerflow_data['Body']['Data']['Site']['E_Day']
 data['powerflow_E_Year'] = powerflow_data['Body']['Data']['Site']['E_Year']
 data['powerflow_E_Total'] = powerflow_data['Body']['Data']['Site']['E_Total']
 
-print time.time()-starttime
+print(time.time()-starttime)
 
 # meter
 starttime = time.time()
@@ -86,7 +86,7 @@ data['meter_EnergyReactive_VArAC_Sum_Consumed'] = meter_data['Body']['Data']['0'
 data['meter_EnergyReal_WAC_Plus_Absolute'] = meter_data['Body']['Data']['0']['EnergyReal_WAC_Plus_Absolute']
 data['meter_EnergyReal_WAC_Minus_Absolute'] = meter_data['Body']['Data']['0']['EnergyReal_WAC_Minus_Absolute']
 
-print time.time()-starttime
+print(time.time()-starttime)
 
 # battery
 starttime = time.time()
@@ -95,19 +95,29 @@ battery_url = "http://" + hostname + "/solar_api/v1/GetStorageRealtimeData.cgi?S
 battery_data = get_data(battery_url)
 
 data['battery_controller_timestamp'] = battery_data['Head']['Timestamp']
-data['battery_controller_timestamp2'] = battery_data['Body']['Data']['0']['Controller']['TimeStamp']
-data['battery_controller_StateOfCharge_Relative'] = battery_data['Body']['Data']['0']['Controller']['StateOfCharge_Relative']
-data['battery_controller_Voltage_DC'] = battery_data['Body']['Data']['0']['Controller']['Voltage_DC']
-data['battery_controller_Current_DC'] = battery_data['Body']['Data']['0']['Controller']['Current_DC']
-data['battery_controller_Temperature_Cell'] = battery_data['Body']['Data']['0']['Controller']['Temperature_Cell']
-data['battery_controller_Voltage_DC_Maximum_Cell'] = battery_data['Body']['Data']['0']['Controller']['Voltage_DC_Maximum_Cell']
-data['battery_controller_Voltage_DC_Minimum_Cell'] = battery_data['Body']['Data']['0']['Controller']['Voltage_DC_Minimum_Cell']
 
-print time.time()-starttime
+if battery_data['Body']['Data']['0']['Controller']['Enable'] == 1:
+	data['battery_controller_timestamp2'] = battery_data['Body']['Data']['0']['Controller']['TimeStamp']
+	data['battery_controller_StateOfCharge_Relative'] = battery_data['Body']['Data']['0']['Controller']['StateOfCharge_Relative']
+	data['battery_controller_Voltage_DC'] = battery_data['Body']['Data']['0']['Controller']['Voltage_DC']
+	data['battery_controller_Current_DC'] = battery_data['Body']['Data']['0']['Controller']['Current_DC']
+	data['battery_controller_Temperature_Cell'] = battery_data['Body']['Data']['0']['Controller']['Temperature_Cell']
+	data['battery_controller_Voltage_DC_Maximum_Cell'] = battery_data['Body']['Data']['0']['Controller']['Voltage_DC_Maximum_Cell']
+	data['battery_controller_Voltage_DC_Minimum_Cell'] = battery_data['Body']['Data']['0']['Controller']['Voltage_DC_Minimum_Cell']
+else:
+	data['battery_controller_timestamp2'] = 0
+	data['battery_controller_StateOfCharge_Relative'] = 0
+	data['battery_controller_Voltage_DC'] = 0.0
+	data['battery_controller_Current_DC'] = 0.0
+	data['battery_controller_Temperature_Cell'] = 0.0
+	data['battery_controller_Voltage_DC_Maximum_Cell'] = 0.0
+	data['battery_controller_Voltage_DC_Minimum_Cell'] = 0.0
+
+print(time.time()-starttime)
 
 # Print
 for key, value in data.items():
-	print('{}: {}'.format(key, value))
+	print('{}: {} - {}'.format(key, value, type(value)))
 
 # Save to DB
 con = lite.connect('fronius.db')
@@ -117,6 +127,6 @@ with con:
     
     #cur.execute("DROP TABLE IF EXISTS fronius")
     #cur.execute("CREATE TABLE fronius(" + ', '.join(data.keys()) + ")")
-    cur.execute("INSERT INTO fronius VALUES (" + ('?,' * len(data.values()))[:-1] + ")", data.values())
+    cur.execute("INSERT INTO fronius VALUES (" + ('?,' * len(data.values()))[:-1] + ")", list(data.values()))
 
 
