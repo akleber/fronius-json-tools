@@ -9,6 +9,8 @@ Usage: archivedata2csv.py <subdir_with_json_files>
 import json
 import csv
 import os
+import sys
+from dateutil.parser import parse
 
 def main(argv):
     subdir = argv[1]
@@ -28,14 +30,14 @@ def main(argv):
                 data = json.load(data_file)
 
             if data['Body']['Data']:
-                wac_sum_produced = data['Body']['Data']['inverter/1']['Data']['EnergyReal_WAC_Sum_Produced']['Values']['0']
-                date = data['Body']['Data']['inverter/1']['Start']
+                wac_sum_produced = float(data['Body']['Data']['inverter/1']['Data']['EnergyReal_WAC_Sum_Produced']['Values']['0'])/1000.0
+                date = parse(data['Body']['Data']['inverter/1']['Start'])
 
-                EnergyReal_WAC_Sum_Produced_per_day.append( (date, wac_sum_produced) )
+                EnergyReal_WAC_Sum_Produced_per_day.append( (date.strftime("%y/%m/%d"), wac_sum_produced) )
 
 
     # no header text for the time column so that excel treats it as x axis values
-    fieldnames = ['Date', 'EnergyReal_WAC_Sum_Produced']
+    fieldnames = ['Date', 'EnergyReal_WAC_Sum_Produced_kWh']
 
     with open('examples/EnergyReal_WAC_Sum_Produced_per_day.csv', 'w') as csv_file:
         writer = csv.writer(csv_file, dialect='excel-tab')
