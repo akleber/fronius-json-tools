@@ -18,10 +18,10 @@ Nevertheless my goal is to continously work on them until they fit my needs.
 # Relevant Graphs
 * Battery Charge throughout the day
 * Overview
-** P_Load (area)
-** P_Grid (line)
-** P (line)
-** SOC (line)
+  * P_Load (area)
+  * P_Grid (line)
+  * P (line)
+  * SOC (line)
 
 # API Links
 * <http://fronius/solar_api/v1/GetActiveDeviceInfo.cgi?DeviceClass=System>

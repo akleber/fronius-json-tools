@@ -10,7 +10,7 @@ There are three json data sources from the Fronius datalogger:
 
 
 Value                                 | Realtime | Archive Data (sum) | Archive Data (detail) | Push Data
----------------------------------------------------------------------------------------------------------
+------------------------------------- | -------- | ------------------ | --------------------- | ---------
 meter/location                        |          |                    |                       | X
 meter/EnergyReal_WAC_Plus_Absolute    |          |                    | X                     | X
 meter/EnergyReal_WAC_Minus_Absolute   |          |                    | X                     | X
