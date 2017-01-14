@@ -13,6 +13,7 @@ Nevertheless my goal is to continously work on them until they fit my needs.
 * iOS app and today widget that shows live data from datalogger
 
 # TODOs
+* document setup/getting started
 
 # Relevant Graphs
 * Battery Charge throughout the day
@@ -52,6 +53,7 @@ Nevertheless my goal is to continously work on them until they fit my needs.
 * SeriesType=DailySum sums up all saved (144 per day) Values, if it makes sense or not. For example the EnergyReal_WAC_Plus_Absolute value from the meter is the absolute value every 5 minutes, and suming up this value does not make sense.
 * The channel TimeSpanInSec shows the "exact" time span between two time points, typically between 298 and 306
 * The Channel Temperature_Powerstage is not available on my Fronius Symo Hybrid 3.0-3-S
+* GetArchivData is quite slow
 
 #API Changes
 
