@@ -93,5 +93,5 @@ ENV/
 fronius.db
 
 # akleber specific
-drosselweg/
+drosselweg*/
 fronius-json-tools.sublime-workspace
