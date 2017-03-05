@@ -11,20 +11,29 @@ import csv
 import collections
 import matplotlib.pyplot as plt
 from pprint import pprint
-import sys
+import sys, os
+
+
+Wp = 4060
 
 
 def get_data_from_file(filename):
     """
-    returns [Inverter EnergyReal_WAC_Sum_Produced Wh per day
-             Meter EnergyReal_WAC_Minus Wh per day
-             Meter EnergyReal_WAC_Plus Wh per day]
-
+    returns data for one day from a logdata-data file as a list of:
+    [Inverter EnergyReal_WAC_Sum_Produced Wh per day
+     Meter EnergyReal_WAC_Minus Wh per day
+     Meter EnergyReal_WAC_Plus Wh per day]
     """
+    if not os.path.exists(filename):
+        print("File {} not found".format(filename))
+        return []
+
     print("Processing file {}".format(filename))
 
     with open(filename) as data_file:    
         data = json.load(data_file)
+
+    #pprint(data)
 
     sum_produced = 0.0
 
@@ -32,25 +41,75 @@ def get_data_from_file(filename):
     for key, value in wac_sum_produced.items():
         sum_produced = sum_produced + value
 
-    print("Sum produced {:.2f} Wh".format(sum_produced))
+    #print("Sum produced {:.2f} Wh".format(sum_produced))
 
     meter_minus_data = data['Body']['meter:16220118']['Data']['EnergyReal_WAC_Minus_Absolute']['Values']
     meter_minus_start_value = meter_minus_data["0"]
     meter_minus_end_value = meter_minus_data["85500"]
     meter_minus = meter_minus_end_value - meter_minus_start_value
 
-    print("Meter minus {} Wh".format(meter_minus))
+    #print("Meter minus {} Wh".format(meter_minus))
 
     meter_plus_data = data['Body']['meter:16220118']['Data']['EnergyReal_WAC_Plus_Absolute']['Values']
     meter_plus_start_value = meter_plus_data["0"]
     meter_plus_end_value = meter_plus_data["85500"]
     meter_plus = meter_plus_end_value - meter_plus_start_value
 
-    print("Meter plus {} Wh".format(meter_plus))
+    #print("Meter plus {} Wh".format(meter_plus))
 
     return [sum_produced, meter_minus, meter_plus]
 
-    #pprint(data)
+def get_month_data(year, month, start_day, end_day):
+    """
+    returns a list of day datas with additional computed values
+    """
+    path = "drosselweg-logdata"
+
+    days = range(start_day, end_day + 1)
+    month_data = []
+
+    for day in days:
+        filename = "logdata-data" + str(year) + str(month).zfill(2) + str(day).zfill(2) + "235000.json"
+
+        file = os.path.join(path, filename)
+        day_data = compute_additional_day_data(get_data_from_file(file))
+        month_data.append(day_data)
+
+
+    sum_produced = 0
+
+    for day in month_data:
+        sum_produced = sum_produced + day[0]
+        print("Specific yield {}".format(day[4]))
+
+    print("Sum produced {} Wh".format(sum_produced))
+
+    specific_yield_month = sum_produced / len(days) / Wp
+    print("Specific yield month {}".format(specific_yield_month))
+
+
+
+def compute_additional_day_data(day_data):
+    """
+    Takes day data and  computes additional data based on it, returns it as a list of:
+    [produced,         (WAC_Sum_Produced)
+     total_consumed,   (WAC_Minus + WAC_Sum_Produced - WAC_Plus)
+     direct_consumed,  (WAC_Sum_Produced - WAC_Plus),
+     supplied,         (WAC_Plus)
+     specific_yield    (WAC_Sum_Produced / Wp)
+    ]
+    """
+    if len(day_data) != 3:
+        return [0, 0, 0, 0, 0]
+
+    produced = day_data[0]
+    total_consumed = day_data[1] + day_data[0] - day_data[2]
+    direct_consumed = day_data[0] - day_data[2]
+    supplied = day_data[2]
+    specific_yield = day_data[0] / Wp
+
+    return [produced, total_consumed, direct_consumed, supplied, specific_yield]
+
 
 
 def process_date_range(start_date, end_date):
@@ -58,7 +117,9 @@ def process_date_range(start_date, end_date):
 
 
 def main(argv):
-    get_data_from_file("examples/logdata-data20170304235000.json")
+    #get_data_from_file("examples/logdata-data20170304235000.json")
+    #get_month_data(2017, 1, 1, 31)
+    get_month_data(2017, 2, 1, 28)
 
 
 def to_time(seconds):
