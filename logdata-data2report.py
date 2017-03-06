@@ -12,9 +12,12 @@ import collections
 import matplotlib.pyplot as plt
 from pprint import pprint
 import sys, os
+from datetime import date
+from calendar import monthrange
 
 
 Wp = 4060
+Year = 2017
 
 
 def get_data_from_file(filename):
@@ -113,13 +116,31 @@ def compute_additional_day_data(day_data):
 
 
 def process_date_range(start_date, end_date):
-    pass
+
+    for month in range(start_date.month, end_date.month + 1):
+
+        start_day = 1
+        if month == start_date.month:
+            start_day = max(1, start_date.day)
+
+        weekday, number_of_days = monthrange(start_date.year, month)
+        end_day = number_of_days
+        if month == end_date.month:
+            end_day = min(number_of_days, end_date.day)
+
+        get_month_data(start_date.year, month, start_day, end_day)
+
 
 
 def main(argv):
     #get_data_from_file("examples/logdata-data20170304235000.json")
     #get_month_data(2017, 1, 1, 31)
-    get_month_data(2017, 2, 1, 28)
+    #get_month_data(2017, 2, 1, 28)
+
+    start_date = date(Year, 1, 1)
+    today = date.today()
+    end_date = date(today.year, today.month, today.day - 1)
+    process_date_range(start_date, end_date)
 
 
 def to_time(seconds):
