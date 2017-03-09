@@ -16,9 +16,19 @@ from datetime import date
 from calendar import monthrange
 
 
-Wp = 4060
-Year = 2017
+WP = 4060
+YEAR = 2017
 
+
+PRODUCED = 0
+TOTAL_CONSUMED = 1
+DIRECT_CONSUMED = 2
+SUPPLIED = 3
+SPECIFIC_YIELD = 4
+
+WAC_SUB_PRODUCED = 0
+WAC_MINUS = 1 # supplied
+WAC_PLUS = 2  # purchased
 
 def get_data_from_file(filename):
     """
@@ -87,8 +97,10 @@ def get_month_data(year, month, start_day, end_day):
 
     print("Sum produced {} Wh".format(sum_produced))
 
-    specific_yield_month = sum_produced / len(days) / Wp
+    specific_yield_month = sum_produced / len(days) / WP
     print("Specific yield month {}".format(specific_yield_month))
+
+    return month_data
 
 
 
@@ -96,39 +108,66 @@ def compute_additional_day_data(day_data):
     """
     Takes day data and  computes additional data based on it, returns it as a list of:
     [produced,         (WAC_Sum_Produced)
-     total_consumed,   (WAC_Minus + WAC_Sum_Produced - WAC_Plus)
-     direct_consumed,  (WAC_Sum_Produced - WAC_Plus),
-     supplied,         (WAC_Plus)
+     total_consumed,   (WAC_Plus + WAC_Sum_Produced - WAC_Minus)
+     direct_consumed,  (WAC_Sum_Produced - WAC_Minus),
+     supplied,         (WAC_Minus)
      specific_yield    (WAC_Sum_Produced / Wp)
     ]
     """
     if len(day_data) != 3:
         return [0, 0, 0, 0, 0]
 
-    produced = day_data[0]
-    total_consumed = day_data[1] + day_data[0] - day_data[2]
-    direct_consumed = day_data[0] - day_data[2]
-    supplied = day_data[2]
-    specific_yield = day_data[0] / Wp
+    produced = day_data[WAC_SUB_PRODUCED]
+    total_consumed = day_data[WAC_PLUS] + day_data[WAC_SUB_PRODUCED] - day_data[WAC_MINUS]
+    direct_consumed = day_data[WAC_SUB_PRODUCED] - day_data[WAC_MINUS]
+    supplied = day_data[WAC_MINUS]
+    specific_yield = day_data[WAC_SUB_PRODUCED] / WP
 
     return [produced, total_consumed, direct_consumed, supplied, specific_yield]
 
 
 
-def process_date_range(start_date, end_date):
+def get_year_data(year):
+
+    year_data = []
+
+    start_date = date(year, 1, 1)
+    end_date = date(year, 12, 31)
 
     for month in range(start_date.month, end_date.month + 1):
+        if month > date.today().month:
+            break
 
         start_day = 1
-        if month == start_date.month:
-            start_day = max(1, start_date.day)
-
         weekday, number_of_days = monthrange(start_date.year, month)
         end_day = number_of_days
-        if month == end_date.month:
-            end_day = min(number_of_days, end_date.day)
 
-        get_month_data(start_date.year, month, start_day, end_day)
+        if month == date.today().month and end_day >= date.today().day:
+            end_day = date.today().day - 1
+
+        year_data.append( get_month_data(start_date.year, month, start_day, end_day) )
+
+    return year_data
+
+def compute_year_values(year_data):
+    
+    produced = 0
+    total_consumed = 0
+    direct_consumed = 0
+    supplied = 0
+
+    for month in year_data:
+        for day in month:
+            produced = produced + day[PRODUCED]
+            total_consumed = total_consumed + day[TOTAL_CONSUMED]
+            direct_consumed = direct_consumed + day[DIRECT_CONSUMED]
+            supplied = supplied + day[SUPPLIED]
+
+    print("Year: Produced:        {:.2f} kWh".format(produced/1000))
+    print("Year: Total consumed:  {:.2f} kWh".format(total_consumed/1000))
+    print("Year: Direct consumed: {:.2f} kWh".format(direct_consumed/1000))
+    print("Year: Supplied:        {:.2f} kWh".format(supplied/1000))
+
 
 
 
@@ -137,10 +176,10 @@ def main(argv):
     #get_month_data(2017, 1, 1, 31)
     #get_month_data(2017, 2, 1, 28)
 
-    start_date = date(Year, 1, 1)
-    today = date.today()
-    end_date = date(today.year, today.month, today.day - 1)
-    process_date_range(start_date, end_date)
+    year_data = get_year_data(YEAR)
+    compute_year_values(year_data)
+
+
 
 
 def to_time(seconds):
