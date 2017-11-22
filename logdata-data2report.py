@@ -41,7 +41,7 @@ def get_data_from_file(filename):
         print("File {} not found".format(filename))
         return []
 
-    print("Processing file {}".format(filename))
+    #print("Processing file {}".format(filename))
 
     with open(filename) as data_file:    
         data = json.load(data_file)
@@ -57,14 +57,25 @@ def get_data_from_file(filename):
     #print("Sum produced {:.2f} Wh".format(sum_produced))
 
     meter_minus_data = data['Body']['meter:16220118']['Data']['EnergyReal_WAC_Minus_Absolute']['Values']
-    meter_minus_start_value = meter_minus_data["0"]
+    
+    if "0" in meter_minus_data:
+        meter_minus_start_value = meter_minus_data["0"]
+    else:
+        meter_minus_start_value = meter_minus_data["1"]
+        print("We have the curious case of a missing secound 0 of the day in the data, we used second 1 instead")
+
     meter_minus_end_value = meter_minus_data["85500"]
     meter_minus = meter_minus_end_value - meter_minus_start_value
 
     #print("Meter minus {} Wh".format(meter_minus))
 
     meter_plus_data = data['Body']['meter:16220118']['Data']['EnergyReal_WAC_Plus_Absolute']['Values']
-    meter_plus_start_value = meter_plus_data["0"]
+
+    if "0" in meter_plus_data:
+        meter_plus_start_value = meter_plus_data["0"]
+    else:
+        meter_plus_start_value = meter_plus_data["1"]
+
     meter_plus_end_value = meter_plus_data["85500"]
     meter_plus = meter_plus_end_value - meter_plus_start_value
 
@@ -93,12 +104,12 @@ def get_month_data(year, month, start_day, end_day):
 
     for day in month_data:
         sum_produced = sum_produced + day[0]
-        print("Specific yield {}".format(day[4]))
+        #print("{}/{} Specific yield {}".format(year, month, day[4]))
 
-    print("Sum produced {} Wh".format(sum_produced))
+    print("{}/{} Sum produced {} kWh".format(year, month,sum_produced/1000))
 
     specific_yield_month = sum_produced / len(days) / WP
-    print("Specific yield month {}".format(specific_yield_month))
+    print("{}/{} Specific average yield per day in this month {}".format(year, month, specific_yield_month))
 
     return month_data
 
@@ -163,10 +174,14 @@ def compute_year_values(year_data):
             direct_consumed = direct_consumed + day[DIRECT_CONSUMED]
             supplied = supplied + day[SUPPLIED]
 
-    print("Year: Produced:        {:.2f} kWh".format(produced/1000))
-    print("Year: Total consumed:  {:.2f} kWh".format(total_consumed/1000))
-    print("Year: Direct consumed: {:.2f} kWh".format(direct_consumed/1000))
-    print("Year: Supplied:        {:.2f} kWh".format(supplied/1000))
+    print("Year: Produced:          {:.2f} kWh".format(produced/1000))
+    print("Year: Total consumed:    {:.2f} kWh".format(total_consumed/1000))
+    print("Year: Direct consumed:   {:.2f} kWh".format(direct_consumed/1000))
+    print("Year: Supplied:          {:.2f} kWh".format(supplied/1000))
+    print("Year: Autarky %:         {:.1f}%".format(direct_consumed/total_consumed*100))
+    print("Year: Direct consumed %: {:.1f}%".format(direct_consumed/produced*100))
+    print("Year: Specific yield:    {:.1f}".format( (produced/1000)/(WP/1000)))
+
 
 
 
