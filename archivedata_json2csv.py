@@ -3,7 +3,7 @@
 Converts archivedata json files gathered with archivedata2json.py
 to a csv file.
 
-Usage: archivedata2csv.py <subdir_with_json_files>
+Usage: python3 archivedata_json2csv.py <subdir_with_json_files>
 """
 
 import json
@@ -49,6 +49,4 @@ def main(argv):
 
 if __name__ == "__main__":
     main(sys.argv)
-    #main(['', 'drosselweg'])
-
 

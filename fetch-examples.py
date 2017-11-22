@@ -11,7 +11,7 @@ import json
 import re
 
 hostname = "fronius"
-version = "1.4.1-11"
+version = "1.6.1-6"
 
 def get_example(endpoint):
 

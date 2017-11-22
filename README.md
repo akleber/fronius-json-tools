@@ -48,13 +48,6 @@ Nevertheless my goal is to continously work on them until they fit my needs.
     PV power then P_Akku is "0"
 * StorageRealtimeData: Interesting stuff about the battery
 
-# Notes on GetArchivData
-* Query interval is restricted to 16 days
-* SeriesType=DailySum sums up all saved (144 per day) Values, if it makes sense or not. For example the EnergyReal_WAC_Plus_Absolute value from the meter is the absolute value every 5 minutes, and suming up this value does not make sense.
-* The channel TimeSpanInSec shows the "exact" time span between two time points, typically between 298 and 306
-* The Channel Temperature_Powerstage is not available on my Fronius Symo Hybrid 3.0-3-S
-* GetArchivData is quite slow
-
 #API Changes
 
 1.2.3-1 -> 1.3.2-3
@@ -87,3 +80,8 @@ Nevertheless my goal is to continously work on them until they fit my needs.
   * Body.Data.0.Controller.Details.Model: "C5" changed to "Fronius Solar Battery"
 * Float values now have a lot more digits
 
+1.4.1-11 -> 1.6.1-6
+* GetStorageRealtimeData.json
+  * Body.Data.0.Controller.DesignedCapacity added, sum of all battery modules DesignedCapacity
+  * Body.Data.0.Modules.DesignedCapacity added, displays capacity of one battery module
+  * Body.Data.0.Modules.Details.Model now shows "unknown" instead of "P49936860R" for my Sony Battery

@@ -1,0 +1,41 @@
+{
+    "Body": {
+        "Data": {
+            "DAY_ENERGY": {
+                "Unit": "Wh",
+                "Values": {
+                    "1": 1186
+                }
+            },
+            "PAC": {
+                "Unit": "W",
+                "Values": {
+                    "1": 1744
+                }
+            },
+            "TOTAL_ENERGY": {
+                "Unit": "Wh",
+                "Values": {
+                    "1": 4720678
+                }
+            },
+            "YEAR_ENERGY": {
+                "Unit": "Wh",
+                "Values": {
+                    "1": 3962512
+                }
+            }
+        }
+    },
+    "Head": {
+        "RequestArguments": {
+            "Scope": "System"
+        },
+        "Status": {
+            "Code": 0,
+            "Reason": "",
+            "UserMessage": ""
+        },
+        "Timestamp": "2017-11-22T11:51:25+01:00"
+    }
+}
