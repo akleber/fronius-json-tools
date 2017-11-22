@@ -48,7 +48,7 @@ Nevertheless my goal is to continously work on them until they fit my needs.
     PV power then P_Akku is "0"
 * StorageRealtimeData: Interesting stuff about the battery
 
-#API Changes
+# API Changes
 
 1.2.3-1 -> 1.3.2-3
 * GetActiveDeviceInfo.json
