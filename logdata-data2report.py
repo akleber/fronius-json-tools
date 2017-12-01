@@ -150,6 +150,12 @@ def get_year_data(year):
             break
 
         start_day = 1
+
+        # if we run the report on the firt day of the month, we have no data for this month yet, so no need to
+        # proceed
+        if start_day == date.today().day and month == date.today().month and year == date.today().year:
+            break
+
         weekday, number_of_days = monthrange(start_date.year, month)
         end_day = number_of_days
 
@@ -174,13 +180,14 @@ def compute_year_values(year_data):
             direct_consumed = direct_consumed + day[DIRECT_CONSUMED]
             supplied = supplied + day[SUPPLIED]
 
-    print("Year: Produced:          {:.2f} kWh".format(produced/1000))
-    print("Year: Total consumed:    {:.2f} kWh".format(total_consumed/1000))
-    print("Year: Direct consumed:   {:.2f} kWh".format(direct_consumed/1000))
-    print("Year: Supplied:          {:.2f} kWh".format(supplied/1000))
-    print("Year: Autarky %:         {:.1f}%".format(direct_consumed/total_consumed*100))
-    print("Year: Direct consumed %: {:.1f}%".format(direct_consumed/produced*100))
-    print("Year: Specific yield:    {:.1f}".format( (produced/1000)/(WP/1000)))
+    print("Year: Produced:          {:8.1f} kWh".format(produced/1000))
+    print("Year: Total consumed:    {:8.1f} kWh".format(total_consumed/1000))
+    print("Year: Direct consumed:   {:8.1f} kWh".format(direct_consumed/1000))
+    print("Year: Bought:            {:8.1f} kWh".format((total_consumed - direct_consumed)/1000))
+    print("Year: Supplied:          {:8.1f} kWh".format(supplied/1000))
+    print("Year: Autarky %:         {:8.1f} %".format(direct_consumed/total_consumed*100))
+    print("Year: Direct consumed %: {:8.1f} %".format(direct_consumed/produced*100))
+    print("Year: Specific yield:    {:8.1f} kWh/kWp".format( (produced/1000)/(WP/1000)))
 
 
 
