@@ -85,3 +85,8 @@ Nevertheless my goal is to continously work on them until they fit my needs.
   * Body.Data.0.Controller.DesignedCapacity added, sum of all battery modules DesignedCapacity
   * Body.Data.0.Modules.DesignedCapacity added, displays capacity of one battery module
   * Body.Data.0.Modules.Details.Model now shows "unknown" instead of "P49936860R" for my Sony Battery
+
+1.6.1-6 -> 1.7.2-5
+* GetInverterRealtimeData.json
+  * Head.RequestArguments.DeviceClass: Inverter added
+

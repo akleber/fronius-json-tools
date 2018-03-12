@@ -1,0 +1,42 @@
+{
+    "Body": {
+        "Data": {
+            "DAY_ENERGY": {
+                "Unit": "Wh",
+                "Values": {
+                    "1": 1948
+                }
+            },
+            "PAC": {
+                "Unit": "W",
+                "Values": {
+                    "1": 142
+                }
+            },
+            "TOTAL_ENERGY": {
+                "Unit": "Wh",
+                "Values": {
+                    "1": 5273995
+                }
+            },
+            "YEAR_ENERGY": {
+                "Unit": "Wh",
+                "Values": {
+                    "1": 484865
+                }
+            }
+        }
+    },
+    "Head": {
+        "RequestArguments": {
+            "DeviceClass": "Inverter",
+            "Scope": "System"
+        },
+        "Status": {
+            "Code": 0,
+            "Reason": "",
+            "UserMessage": ""
+        },
+        "Timestamp": "2018-03-12T13:36:36+01:00"
+    }
+}

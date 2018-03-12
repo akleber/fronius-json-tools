@@ -1,0 +1,61 @@
+{
+    "Body": {
+        "Data": {
+            "0": {
+                "Current_AC_Phase_1": 0.636000030208379,
+                "Current_AC_Phase_2": 0.5810000275960192,
+                "Current_AC_Phase_3": 0.5830000276910141,
+                "Details": {
+                    "Manufacturer": "Fronius",
+                    "Model": "Smart Meter 63A",
+                    "Serial": "16220118"
+                },
+                "Enable": 1,
+                "EnergyReactive_VArAC_Sum_Consumed": 1022640,
+                "EnergyReactive_VArAC_Sum_Produced": 29513880,
+                "EnergyReal_WAC_Minus_Absolute": 2917012,
+                "EnergyReal_WAC_Plus_Absolute": 2395440,
+                "EnergyReal_WAC_Sum_Consumed": 2395440,
+                "EnergyReal_WAC_Sum_Produced": 2917012,
+                "Frequency_Phase_Average": 50.00000074505806,
+                "Meter_Location_Current": 0,
+                "PowerApparent_S_Phase_1": 148.37881409522998,
+                "PowerApparent_S_Phase_2": 136.0702129259757,
+                "PowerApparent_S_Phase_3": 136.48031296493312,
+                "PowerApparent_S_Sum": 230.23999485373497,
+                "PowerFactor_Phase_1": -0.13999999687075615,
+                "PowerFactor_Phase_2": 0.3299999926239252,
+                "PowerFactor_Phase_3": 0.13999999687075615,
+                "PowerFactor_Sum": 0.05999999865889549,
+                "PowerReactive_Q_Phase_1": -96.69999783858657,
+                "PowerReactive_Q_Phase_2": -50.1199988797307,
+                "PowerReactive_Q_Phase_3": -83.4199981354177,
+                "PowerReactive_Q_Sum": -230.23999485373497,
+                "PowerReal_P_Phase_1": -14.349999679252505,
+                "PowerReal_P_Phase_2": 17.719999603927135,
+                "PowerReal_P_Phase_3": 11.839999735355377,
+                "PowerReal_P_Sum": 15.209999660030007,
+                "TimeStamp": 1520858203,
+                "Visible": 1,
+                "Voltage_AC_PhaseToPhase_12": 404.90001923171803,
+                "Voltage_AC_PhaseToPhase_23": 405.60001926496625,
+                "Voltage_AC_PhaseToPhase_31": 404.8000192269683,
+                "Voltage_AC_Phase_1": 233.3000110811554,
+                "Voltage_AC_Phase_2": 234.2000111239031,
+                "Voltage_AC_Phase_3": 234.10001111915335
+            }
+        }
+    },
+    "Head": {
+        "RequestArguments": {
+            "DeviceClass": "Meter",
+            "Scope": "System"
+        },
+        "Status": {
+            "Code": 0,
+            "Reason": "",
+            "UserMessage": ""
+        },
+        "Timestamp": "2018-03-12T13:36:44+01:00"
+    }
+}
