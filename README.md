@@ -90,3 +90,5 @@ Nevertheless my goal is to continously work on them until they fit my needs.
 * GetInverterRealtimeData.json
   * Head.RequestArguments.DeviceClass: Inverter added
 
+1.7.2-5 -> 1.8.1-9
+no changes
