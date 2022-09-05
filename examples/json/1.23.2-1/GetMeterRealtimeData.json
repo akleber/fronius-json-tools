@@ -1,0 +1,61 @@
+{
+    "Body": {
+        "Data": {
+            "0": {
+                "Current_AC_Phase_1": 1.755,
+                "Current_AC_Phase_2": 2.003,
+                "Current_AC_Phase_3": 1.793,
+                "Details": {
+                    "Manufacturer": "Fronius",
+                    "Model": "Smart Meter 63A",
+                    "Serial": "16220118"
+                },
+                "Enable": 1,
+                "EnergyReactive_VArAC_Sum_Consumed": 1963990,
+                "EnergyReactive_VArAC_Sum_Produced": 143972490,
+                "EnergyReal_WAC_Minus_Absolute": 14667142,
+                "EnergyReal_WAC_Plus_Absolute": 11482705,
+                "EnergyReal_WAC_Sum_Consumed": 11482705,
+                "EnergyReal_WAC_Sum_Produced": 14667142,
+                "Frequency_Phase_Average": 49.9,
+                "Meter_Location_Current": 0,
+                "PowerApparent_S_Phase_1": 412.60049999999995,
+                "PowerApparent_S_Phase_2": 470.1041,
+                "PowerApparent_S_Phase_3": 422.7894,
+                "PowerApparent_S_Sum": 1228,
+                "PowerFactor_Phase_1": -0.98,
+                "PowerFactor_Phase_2": -0.99,
+                "PowerFactor_Phase_3": -0.94,
+                "PowerFactor_Sum": -0.97,
+                "PowerReactive_Q_Phase_1": -65.36,
+                "PowerReactive_Q_Phase_2": -63.47,
+                "PowerReactive_Q_Phase_3": -123.47,
+                "PowerReactive_Q_Sum": -252.3,
+                "PowerReal_P_Phase_1": -386.38,
+                "PowerReal_P_Phase_2": -451.52,
+                "PowerReal_P_Phase_3": -364.45,
+                "PowerReal_P_Sum": -1202.35,
+                "TimeStamp": 1662391479,
+                "Visible": 1,
+                "Voltage_AC_PhaseToPhase_12": 406.9,
+                "Voltage_AC_PhaseToPhase_23": 407.5,
+                "Voltage_AC_PhaseToPhase_31": 407.8,
+                "Voltage_AC_Phase_1": 235.1,
+                "Voltage_AC_Phase_2": 234.7,
+                "Voltage_AC_Phase_3": 235.8
+            }
+        }
+    },
+    "Head": {
+        "RequestArguments": {
+            "DeviceClass": "Meter",
+            "Scope": "System"
+        },
+        "Status": {
+            "Code": 0,
+            "Reason": "",
+            "UserMessage": ""
+        },
+        "Timestamp": "2022-09-05T17:24:40+02:00"
+    }
+}

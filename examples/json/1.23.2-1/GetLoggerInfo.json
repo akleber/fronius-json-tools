@@ -1,0 +1,29 @@
+{
+    "Body": {
+        "LoggerInfo": {
+            "CO2Factor": 0.5299999713897705,
+            "CO2Unit": "kg",
+            "CashCurrency": "EUR",
+            "CashFactor": 1,
+            "DefaultLanguage": "en",
+            "DeliveryFactor": 1,
+            "HWVersion": "2.4D",
+            "PlatformID": "wilma",
+            "ProductID": "fronius-hybrid",
+            "SWVersion": "1.23.2-1",
+            "TimezoneLocation": "Berlin",
+            "TimezoneName": "CEST",
+            "UTCOffset": 7200,
+            "UniqueID": "239.6545"
+        }
+    },
+    "Head": {
+        "RequestArguments": {},
+        "Status": {
+            "Code": 0,
+            "Reason": "",
+            "UserMessage": ""
+        },
+        "Timestamp": "2022-09-05T17:24:40+02:00"
+    }
+}

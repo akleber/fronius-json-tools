@@ -1,0 +1,102 @@
+{
+    "Body": {
+        "Data": {
+            "0": {
+                "Controller": {
+                    "Capacity_Maximum": 3600,
+                    "Current_DC": 0,
+                    "DesignedCapacity": 3600,
+                    "Details": {
+                        "Manufacturer": "Fronius",
+                        "Model": "Fronius Solar Battery",
+                        "Serial": "27342798"
+                    },
+                    "Enable": 1,
+                    "StateOfCharge_Relative": 99,
+                    "Temperature_Cell": 28.850000000000023,
+                    "TimeStamp": 1662391480,
+                    "Voltage_DC": 160.3,
+                    "Voltage_DC_Maximum_Cell": 3.35,
+                    "Voltage_DC_Minimum_Cell": 3.332
+                },
+                "Modules": [
+                    {
+                        "Capacity_Maximum": 1200,
+                        "Current_DC": -0.03,
+                        "CycleCount_BatteryCell": 1370,
+                        "DesignedCapacity": 1200,
+                        "Details": {
+                            "Manufacturer": "Sony",
+                            "Model": "unknown",
+                            "Serial": "S013012420 "
+                        },
+                        "Enable": 1,
+                        "StateOfCharge_Relative": 99,
+                        "Status_BatteryCell": 53,
+                        "Temperature_Cell": 29.350000000000023,
+                        "Temperature_Cell_Maximum": 29.75,
+                        "Temperature_Cell_Minimum": 28.850000000000023,
+                        "TimeStamp": 1662391471,
+                        "Voltage_DC": 53.413,
+                        "Voltage_DC_Maximum_Cell": 3.346,
+                        "Voltage_DC_Minimum_Cell": 3.332
+                    },
+                    {
+                        "Capacity_Maximum": 1200,
+                        "Current_DC": -0.03,
+                        "CycleCount_BatteryCell": 1369,
+                        "DesignedCapacity": 1200,
+                        "Details": {
+                            "Manufacturer": "Sony",
+                            "Model": "unknown",
+                            "Serial": "S013012453 "
+                        },
+                        "Enable": 1,
+                        "StateOfCharge_Relative": 99,
+                        "Status_BatteryCell": 53,
+                        "Temperature_Cell": 29.150000000000034,
+                        "Temperature_Cell_Maximum": 29.55000000000001,
+                        "Temperature_Cell_Minimum": 28.75,
+                        "TimeStamp": 1662391471,
+                        "Voltage_DC": 53.434,
+                        "Voltage_DC_Maximum_Cell": 3.345,
+                        "Voltage_DC_Minimum_Cell": 3.332
+                    },
+                    {
+                        "Capacity_Maximum": 1200,
+                        "Current_DC": -0.03,
+                        "CycleCount_BatteryCell": 1377,
+                        "DesignedCapacity": 1200,
+                        "Details": {
+                            "Manufacturer": "Sony",
+                            "Model": "unknown",
+                            "Serial": "S013012421 "
+                        },
+                        "Enable": 1,
+                        "StateOfCharge_Relative": 99,
+                        "Status_BatteryCell": 52,
+                        "Temperature_Cell": 28.150000000000034,
+                        "Temperature_Cell_Maximum": 28.55000000000001,
+                        "Temperature_Cell_Minimum": 27.75,
+                        "TimeStamp": 1662391471,
+                        "Voltage_DC": 53.508,
+                        "Voltage_DC_Maximum_Cell": 3.35,
+                        "Voltage_DC_Minimum_Cell": 3.337
+                    }
+                ]
+            }
+        }
+    },
+    "Head": {
+        "RequestArguments": {
+            "DeviceClass": "Storage",
+            "Scope": "System"
+        },
+        "Status": {
+            "Code": 0,
+            "Reason": "",
+            "UserMessage": ""
+        },
+        "Timestamp": "2022-09-05T17:24:41+02:00"
+    }
+}
